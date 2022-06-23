@@ -1,17 +1,15 @@
-package com.example.foodlist.wishlist.entity;
+package com.example.foodlist.wishlist.dto;
 
-import com.example.foodlist.db.MemoryDbEntity;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-public class WishListEntity extends MemoryDbEntity {
+public class WishListEntityDto{
+    private Integer index;
     private String title; //음식명,장소명
     private String category; //카테고리
     private String address;		//주소

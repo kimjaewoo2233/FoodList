@@ -1,3 +1,10 @@
+
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
 naver:
  url:
   search:
@@ -7,3 +14,5 @@ naver:
   client:
     id: 13De2BDkkPwBrZddTNyQ
     secret: 5z043okjEz
+
+
