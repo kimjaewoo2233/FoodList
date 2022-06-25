@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public class WishListEntity extends MemoryDbEntity {
+    //서버로 요청을 보낼때는 index가 필요가 없기 때문에 Entitiy를 사용하지만 저장할때는 index가 필요하고 index 값으로 구분하기에 Dto가 따로필요
     private String title; //음식명,장소명
     private String category; //카테고리
     private String address;		//주소

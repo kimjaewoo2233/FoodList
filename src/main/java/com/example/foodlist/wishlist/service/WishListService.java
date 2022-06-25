@@ -96,9 +96,23 @@ public class WishListService {
 
     public List<WishListEntityDto> findAll() {
 
-        return wishListRepository.listAll().stream().map(it -> entityToDto(it)).collect(Collectors.toList());
+        return wishListRepository.findAll().stream().map(it -> entityToDto(it)).collect(Collectors.toList());
         // 여기에 값이 Entitiy이기에 Dto로ㅓ 바꿔서 해준다. Collect는 List형태로 다시 바꿔준거
             //map은 함수를 사용하기 위해 사용함
+    }
+
+    public void delete(int index) {
+        wishListRepository.deleteById(index);
+    }
+
+    public void addVisit(int index){
+        var wishItem = wishListRepository.findById(index);
+        if(wishItem.isPresent()){       //값이 있다면
+            var item = wishItem.get();
+
+            item.setVisit(true);    //방문한적있는지
+            item.setVisitCount(item.getVisitCount()+1); //방문횟수를 증가시킨다
+        }
     }
 }
 

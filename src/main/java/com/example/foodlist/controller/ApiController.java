@@ -15,7 +15,8 @@ import java.util.List;
 @RequestMapping("/api/restaurant")
 @RequiredArgsConstructor    //lombok을 활용한 주입
 public class ApiController {
-
+    //html파일은 template 디렉토리 안에
+    //js파일은 static 안에 들어가면 된다
     private final WishListService wishListService;
 
     @GetMapping("/search")
@@ -31,5 +32,15 @@ public class ApiController {
     @GetMapping("/all")
     public List<WishListEntityDto> findAll(){
         return wishListService.findAll();
+    }
+
+    @DeleteMapping("/{index}")
+    public void delete(@PathVariable int index){
+                wishListService.delete(index);
+    }
+    //업데이트를 하는 것이기에 Post방식
+    @PostMapping("/{index}")
+    public void addVisit(@PathVariable int index){
+            wishListService.addVisit(index);
     }
 }
