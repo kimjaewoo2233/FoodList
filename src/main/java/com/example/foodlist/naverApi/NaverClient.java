@@ -44,7 +44,7 @@ public class NaverClient {
 
         var headers =new HttpHeaders();
         headers.set("X-Naver-Client-Id", "13De2BDkkPwBrZddTNyQ");
-        headers.set("X-Naver-Client-Secret", "5z043okjEz");
+        headers.set("X-Naver-Client-Secret", "");
         //restTemplate에서는 HttpEntity 타입을 매개변수로 받기에 HttpEntity로 header값들을 넣어야한다
         var httpEntity = new HttpEntity<>(headers);
         var responseType = new ParameterizedTypeReference<SearchLocalRes>(){};
@@ -69,7 +69,7 @@ public class NaverClient {
         //UriComponentsBuilder는  여러개의 파라미터를 연결하여 URL형태로 만들어주는 것이다
         var headers =new HttpHeaders();
         headers.set("X-Naver-Client-Id", "13De2BDkkPwBrZddTNyQ");
-        headers.set("X-Naver-Client-Secret", "5z043okjEz");
+        headers.set("X-Naver-Client-Secret", "");
 
         var httpEntity = new HttpEntity<>(headers);
         var responseType = new ParameterizedTypeReference<SearchLocalRes>(){};  //추상클래스임
